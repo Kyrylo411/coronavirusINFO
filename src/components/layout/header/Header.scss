@@ -1,0 +1,27 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.logoBlock {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		max-width: 550px;
+		width: 100%;
+
+		.logo {
+			background-image: url('/images/logo.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 200px;
+			height: 200px;
+		}
+
+		.headerText {
+			font-size: 50px;
+			font-weight: bolder;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.infoBlock {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 600px;
+
+
+	.imgNameBlock {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		img {
+			margin: 0 25px;
+		}
+	}
+
+	.nameInfo {
+		margin: 0 25px;
+	}
+}
