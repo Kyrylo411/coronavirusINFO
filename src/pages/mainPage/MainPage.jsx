@@ -14,9 +14,9 @@ export default function MainPage() {
 		dispatch(fetchingData())
 	}, [dispatch])
 
-	const { data, loading, error, filter, countryData, isOpen, modalError } = useSelector(state => {
+	const { data, loading, error, filter, countryData, isOpen, modalError, modalLoading } = useSelector(state => {
 		const { mainPageReducer: { data, loading, error, filter } } = state
-		const { modalReducer: { countryData, isOpen, modalError } } = state
+		const { modalReducer: { countryData, isOpen, modalError, modalLoading } } = state
 		return {
 			data,
 			loading,
@@ -24,7 +24,8 @@ export default function MainPage() {
 			filter,
 			countryData,
 			isOpen,
-			modalError
+			modalError,
+			modalLoading
 		}
 	})
 
@@ -54,7 +55,7 @@ export default function MainPage() {
 	return (
 		<div>
 			{loading ? <Loader /> : <Table data={filter.length ? filter : data} />}
-			{loading ? null : <ModalWindow isOpen={isOpen} data={countryData || backData} />}
+			{modalLoading ? <Loader /> : <ModalWindow isOpen={isOpen} data={countryData || backData} />}
 		</div>
 	)
 }

@@ -4,14 +4,14 @@ const {
 	OPEN_MODAL,
 	CLOSE_MODAL,
 	GET_COUNTRY_INFO,
-	SET_LOADING,
+	SET_MODAL_LOADING,
 	GET_COUNTRY_DATA_ERROR
 } = actionTypes
 
 const initialState = {
 	countryData: [],
 	isOpen: false,
-	loading: false,
+	modalLoading: false,
 	modalError: null,
 }
 
@@ -31,7 +31,7 @@ export const modalReducer = (state=initialState, {type, payload}) => {
 		...state,
 		countryData: payload[payload.length-1]
 		}
-		case SET_LOADING: return {
+		case SET_MODAL_LOADING: return {
 		...state,
 		loading : payload 
 		}
